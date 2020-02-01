@@ -1,0 +1,298 @@
+•	Write a C program for the following scenario: A telecom service provider offers recharge discount of Rs. 100 for using GPay wallet,
+Rs. 50 for using Phone Pe wallet and Rs. 200 for using Axis Bank credit card only if in all cases the recharge amount is more than Rs.499.
+Program must accept the Recharge amount and mode of payment. The net amount to be paid must be the output of the program.
+
+#include<stdio.h>
+main()
+{
+	int c,a;
+	printf("Enter the amount: ");
+	scanf("%d",&a);
+	if(a>499)
+	{
+		printf("Enter your choice to pay the 1.GPay 2.PP 3.Axis ");
+		scanf("%d",&c);
+		switch(c)
+		{
+			case 1:a=a-100;
+					printf("%d to pay ",a);
+					break;
+			case 2:a=a-50;
+					printf("%d to pay ",a);
+					break;
+			case 3:a=a-200;
+					printf("%d to pay ",a);
+					break; //to get the controll out of loop
+		}
+	}
+	else
+	{
+		printf("%d amt to pay",a);
+	}
+	
+}
+
+
+
+
+•	A commercial bank accepts fixed deposit from the public. The rates of interest vary depending on the number of days for which the 
+deposits are made. Following are the rates.
+30 days to 60 days	6%
+61 days to 90 days	6.5%
+91 days to 180 days	7%
+181 days to 1 year	8%
+More than 1 year	8.5%
+For senior citizen, 1% additional interest is offered for deposits more than 50,000.
+Write a program to accept the amount, number of days for which the amount is deposited and the age of the depositor, calculate the 
+amount to be given to the customer after the completion of term of deposit.
+
+#include<stdio.h>
+main()
+{
+	int a,amt,c,t;
+	printf("1.Plan1\n2.Plan2\n3.Plan3\nPlan3\nPlan4\nPlan5");
+	printf("Enter Choice ");
+	scanf("%d",&c);
+	switch(c)
+	{
+		case 1:printf("Enter age ");
+				scanf("%d",&a);
+				if(a<60)
+				{
+					printf("Enter amount ");
+					scanf("%d",&amt);
+					t=amt+(amt*0.06);
+					printf("%d is total amount ",t);
+				}
+				else
+				{
+					printf("Enter amount ");
+					scanf("%d",&amt);
+					if(amt>50000)
+					{
+						t=amt+(amt*0.07);
+						printf("%d is total amount",t);
+					}
+					else
+					{
+						t=amt+(amt*0.06);
+						printf("%d is total amount",t);
+					}
+					
+				}
+				break;
+		case 2:printf("Enter age ");
+				scanf("%d",&a);
+				if(a<60)
+				{
+					printf("Enter amount ");
+					scanf("%d",&amt);
+					t=amt+(amt*0.065);
+					printf("%d is total amount ",t);
+				}
+				else
+				{
+					printf("Enter amount ");
+					scanf("%d",&amt);
+					if(amt>50000)
+					{
+						t=amt+(amt*0.075);
+						printf("%d is total amount",t);
+					}
+					else
+					{
+						t=amt+(amt*0.065);
+						printf("%d is total amount",t);
+					}
+					
+				}
+				break;
+		case 3:printf("Enter age ");
+				scanf("%d",&a);
+				if(a<60)
+				{
+					printf("Enter amount ");
+					scanf("%d",&amt);
+					t=amt+(amt*0.07);
+					printf("%d is total amount ",t);
+				}
+				else
+				{
+					printf("Enter amount ");
+					scanf("%d",&amt);
+					if(amt>50000)
+					{
+						t=amt+(amt*0.08);
+						printf("%d is total amount",t);
+					}
+					else
+					{
+						t=amt+(amt*0.07);
+						printf("%d is total amount",t);
+					}
+					
+				}
+				break;
+		case 4:printf("Enter age ");
+				scanf("%d",&a);
+				if(a<60)
+				{
+					printf("Enter amount ");
+					scanf("%d",&amt);
+					t=amt+(amt*0.08);
+					printf("%d is total amount ",t);
+				}
+				else
+				{
+					printf("Enter amount ");
+					scanf("%d",&amt);
+					if(amt>50000)
+					{
+						t=amt+(amt*0.09);
+						printf("%d is total amount",t);
+					}
+					else
+					{
+						t=amt+(amt*0.08);
+						printf("%d is total amount",t);
+					}
+					
+				}
+				break;
+		case 5:printf("Enter age ");
+				scanf("%d",&a);
+				if(a<60)
+				{
+					printf("Enter amount ");
+					scanf("%d",&amt);
+					t=amt+(amt*0.085);
+					printf("%d is total amount ",t);
+				}
+				else
+				{
+					printf("Enter amount ");
+					scanf("%d",&amt);
+					if(amt>50000)
+					{
+						t=amt+(amt*0.095);
+						printf("%d is total amount",t);
+					}
+					else
+					{
+						t=amt+(amt*0.085);
+						printf("%d is total amount",t);
+					}
+					break;
+				}
+	}
+	
+}
+
+
+
+•	Write a C program to read three sides of triangle. Check whether these sides make triangle. If they make then identify whether it is
+equilateral or isosceles or scalene.
+
+#include<stdio.h>
+main()
+{
+	int a,b,c;
+	printf("Enter side1 ");
+	scanf("%d",&a);
+	printf("Enter side2 ");
+	scanf("%d",&b);
+	printf("Enter side3 ");
+	scanf("%d",&c);
+	if(a+b>c && b+c>a && c+a>b)
+	{
+		printf("It is a valid triangle ");
+		if((a==b) && (b==c))
+			printf("\nIt is a equilateral triangle "); //All sides of a triangle are equal
+		if((a==b && a!=c) || (b==c && b!=a) || (c==a && a!=b) ) //Any two sides of a triangle are equal
+			printf("\nIt is a isoceles triangle ");
+		if((a!=b) && (b!=c) && (c!=a))  //All the sides of a triangle are unequal
+			printf("\nIt is a scalene triangle ");
+	}
+	else
+	{
+		printf("\nIt is a invalid triangle ");
+	}
+}
+
+
+
+•	A Student has scored marks in three subjects. Write a C program to find out the highest, second highest and third highest marks among
+the three subjects. Also find the average of first two highest marks.
+
+#include<stdio.h>
+main()
+{
+	int a,b,c,t,d;
+	printf("Enter marks of sub1 ");
+	scanf("%d",&a);
+	printf("Enter marks of sub2 ");
+	scanf("%d",&b);
+	printf("Enter marks of sub3 ");
+	scanf("%d",&c);
+	if((a>b) && (a>c))
+		t=a;
+	if((b>a) && (b>c))
+		t=b;
+	if((c>a) && (c>b))
+		t=c;
+	printf("%d is highest ",t);
+	if(t==a)
+	{
+		if(b>c)
+		{
+			printf("%d is second",b);
+			printf("%d is third",c);
+			d=(a+b)/2;
+			printf("\nAverage of 2 highest numbers is %d ",d);
+		}
+		else
+		{
+			printf("%d is second",c);
+			printf("%d is third",b);
+			d=(a+c)/2;
+			printf("\nAverage of 2 highest numbers is %d ",d);
+		}
+		
+	}
+	if(t==b)
+	{
+		if(a>c)
+		{
+			printf("%d is second",a);
+			printf("%d is third",c);
+			d=(b+a)/2;
+			printf("\nAverage of 2 highest numbers is %d ",d);
+		}
+		else
+		{
+			printf("%d is second",c);
+			printf("%d is third",a);
+			d=(b+c)/2;
+			printf("\nAverage of 2 highest numbers is %d ",d);
+		}
+	}
+	else if(t==c)
+	{
+		if(b>a)
+		{
+			printf("%d is second",b);
+			printf("%d is third",a);
+			d=(c+b)/2;
+			printf("\nAverage of 2 highest numbers is %d ",d);
+		}
+		else
+		{
+			printf("%d is second",a);
+			printf("%d is third",b);
+			d=(c+a)/2;
+			printf("\nAverage of 2 highest numbers is %d ",d);
+		}
+	}
+}
+
+
