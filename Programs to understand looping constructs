@@ -1,0 +1,31 @@
+C Program to chech weather a number is strong or not
+
+#include<stdio.h>
+int f(int u)
+{	int fact=1;
+	 while(u>1) {
+      		fact = fact * u;
+      		u--;
+      		}
+      	return fact;
+}
+main()
+{
+	int n,t,p,r,i,a[10],l,sum=0,j,e,y;
+	printf("Enter a number: ");
+	scanf("%d",&n);
+	while (n>0)
+    {
+        t = n% 10;
+        r=t;
+        e=f(r);
+        sum=sum+e;
+        //printf("\n%d",t);
+   		n=n/10;
+    }
+	printf("\n%d",sum);
+	if(sum==y)
+		printf("\nIt is strong");
+	else
+		printf("It is not strong ");
+}
