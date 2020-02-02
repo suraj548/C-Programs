@@ -29,3 +29,82 @@ main()
 	else
 		printf("It is not strong ");
 }
+
+
+
+•	Write a program to generate following pattern
+	  1
+	2 1 2
+      3 2 1 2 3
+    4 3 2 1 2 3 4
+    
+#include <stdio.h>
+int main()
+{
+  int n,s, c, row, t = 1;
+
+  scanf("%d", &n);
+
+  for (row = 1; row <= n; row++) {
+    for (c = 1; c <= n - row; c++)
+      printf(" ");
+
+    t = row;
+
+    for (c = 1; c <= row; c++) {
+      printf("%d", t);
+      t--;
+    }
+	t=2;
+	for(c=1;c<=row-1;c++)
+	{
+		printf("%d",t);
+		t++;	
+		
+	}
+
+    printf("\n");
+  }
+
+  return 0;
+}
+
+
+
+•Write a C program to print following pattern.
+                                         1
+                                       1 2 1
+                                     1 2 3 2 1
+	 			   1 2 3 4 3 2 1
+
+#include <stdio.h>
+int main()
+{
+  int n,s, c, row, t = 1;
+
+  scanf("%d", &n);
+
+  for (row = 1; row <= n; row++) {
+    for (c = 1; c <= n - row; c++)
+      printf(" ");
+
+    t = 1;
+
+    for (c = 1; c <= row; c++) {
+      printf("%d", t);
+      t++;
+    }
+	
+	t=row-1;
+	for(c=2;c<=row;c++)
+	{
+		printf("%d",t);
+		t--;	
+		
+	}
+
+    printf("\n\n");
+  }
+
+  return 0;
+}
