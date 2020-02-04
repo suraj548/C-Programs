@@ -1,0 +1,35 @@
+•	Write a program to find intersection of two arrays a and b with size m and n respectively.
+
+Example:
+int a[10]={1,2,4,6,7,8,11,12,13,5}
+intb[5]={8,12,56,13}
+
+Output:
+c[10]={8,12,13}
+
+
+
+#include<stdio.h>
+main()
+{
+	int a[10],b[10],i,j,n,k=0,m,c[10];
+	printf("Enter n: ");
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+		scanf("%d",&a[i]);
+	printf("Enter m: ");
+	scanf("%d",&m);
+	for(j=0;j<m;j++)
+		scanf("%d",&b[j]);		
+	for(i=0;i<n;i++)
+		for(j=0;j<m;j++)
+		{
+			if(a[i]==b[j])
+			{
+				c[k]=a[i];
+				k++;
+			}
+		}
+	for(i=0;i<k;i++)
+		printf("\n%d",c[i]);
+}
