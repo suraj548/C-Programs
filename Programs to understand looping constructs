@@ -69,7 +69,28 @@ int main()
   return 0;
 }
 
+•Write a C program to create a simple gamming application as per the scenario. The admin is asked to select a number between 1 to 10. 
+The user is asked to enter any number. If the number matches the number chosen by the admin then the user wins. The user is given
+maximum of 3 chances. 
 
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+  int c, n,s,i=0;
+  while(i<3)
+  {
+    n = rand()%100+1;
+    printf("\nEnter the number: ");
+    scanf("%d",&s);
+	if(n==s)
+    	printf("\n WIN ");
+    else
+    	printf("\nLoose");
+    	printf("\nThe correct value is : %d",n);
+    i++;
+  }
+  return 0;
+}
 
 •Write a C program to print following pattern.
                                          1
@@ -107,4 +128,28 @@ int main()
   }
 
   return 0;
+}
+
+
+•Suppose an amount is deposited in a commercial Bank , which pays compound interest at the rate of r% annually for n years . 
+Write a C program that prints the amount in account after each year.
+
+#include<stdio.h>
+main()
+{
+	int p,i,n;
+	float c,t,r;
+	printf("Enter the principal amount: ");
+	scanf("%d",&p);
+	printf("Enter the rate of interest: ");
+	scanf("%f",&r);
+	printf("Enter number of years: ");
+	scanf("%d",&n);
+	t=p;
+	for(i=1;i<=n;i++)
+	{
+		c=p*r/(100);
+		t=t+c;
+		printf("\nThe amount in account after %d year : %f",i,t);
+	}
 }
