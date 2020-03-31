@@ -34,13 +34,15 @@ main()
 		printf("\n%d",c[i]);
 }
 
+----------------------------------------------------------------------------------------------------------------------------------------
+
 
 •Write a C program that accepts an array , interchanges first element with last element , second element with second last element & 
 so on , finally prints the new array.
 #include<stdio.h>
 main()
 {
-	int n,a[10],i,j;
+	int n,a[10],i,j,b[];
 	printf("Enter n: ");
 	scanf("%d",&n);
 	for(i=0;i<n;i++)
@@ -51,7 +53,7 @@ main()
 		printf(" %d",b[i]);
 }
 
-
+----------------------------------------------------------------------------------------------------------------------------------------
 
 •Write a C program to count the frequencies of elements of a given integer array.
 #include<stdio.h>
@@ -82,6 +84,8 @@ main()
 }
 
 
+----------------------------------------------------------------------------------------------------------------------------------------
+
 •Write a C program to count the number of vowels in a given words.
 
 #include <stdio.h>
@@ -100,3 +104,45 @@ void main()
 	}
 	printf("\nTHERE ARE %d VOWELS IN THE STRING",vow);
 }
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+write a c program to read n numbers in 1D array and find sum of any consecutive elemnts is present in the arry.print the sub array making 
+sum along with starting index and end index
+#include<stdio.h>
+main()
+{
+	int a[10],b[10],k=0,i=0,j,s=0,n;
+	printf("Enter number of elements: ");
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		printf("Enter element: ");   //this forloop takes the input of the array elements
+		scanf("%d",&a[i]);
+	}
+	for(k=0;k<5;k++)                //In this for loop is outer for loop changes the starting index 
+	{
+		for(i=k;i<n;i++)            //this is middle for loop adding the all elements of array starting from same index(consecutive elements)
+		{
+			s=s+a[i];
+			for(j=i+1;j<n;j++)      //this is the inner for loop checking if the sum calculated by the middle for is present in the array 
+			{
+				if(s==a[j])
+				{
+					printf("\n");
+					printf("start index:%d End Index:%d Sum:%d",k+1,j,s);
+				}
+			}
+		}
+		s=0;
+	}
+}
+
