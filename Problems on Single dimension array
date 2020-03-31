@@ -128,7 +128,7 @@ main()
 		printf("Enter element: ");   //this forloop takes the input of the array elements
 		scanf("%d",&a[i]);
 	}
-	for(k=0;k<5;k++)                //In this for loop is outer for loop changes the starting index 
+		for(k=0;k<5;k++)                //In this for loop is outer for loop changes the starting index 
 	{
 		for(i=k;i<n;i++)            //this is middle for loop adding the all elements of array starting from same index(consecutive elements)
 		{
@@ -138,7 +138,11 @@ main()
 				if(s==a[j])
 				{
 					printf("\n");
-					printf("start index:%d End Index:%d Sum:%d",k+1,j,s);
+					printf("According to main array start index:%d End Index:%d Sum:%d",k+1,j,s);
+					printf("\nThe sub array is\n");
+					for(t=k;t<j+1;t++)
+						printf("%d\t",a[t]);
+					printf("\n");
 				}
 			}
 		}
