@@ -1,0 +1,40 @@
+write a C program to read the physics chemestry and mathematica marks for n students.The maximum marks will be 300.The PCM total and 
+percentage must be calculated.All this data must be stored i a array and should be displayed as follows.
+Physics       Chemestry    Maths     Marks Secured     Total marks    Percentage
+52              72          80           204               300           68.00
+......
+......
+#include<stdio.h>
+main()
+{
+	int n,i,j,s;
+	float a[10][10];
+	printf("Enter the number of students: ");
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			printf("Enter 1.physics marks 2.Chemestry marks 3.Maths marks: ");
+			scanf("%f",&a[i][j]);
+		}
+			a[i][3]=a[i][3]+a[i][j];
+	}
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			a[i][3]=a[i][j]+a[i][3];
+		}
+    a[i][4]=300;
+		a[i][5]=(a[i][3]/300)*100;
+	}
+
+	for(i=0;i<n;i++)
+	{
+		printf("\n\tPhysics  Chemestry Maths total  Total Marks  Percentage");
+		printf("\n");
+		for(j=0;j<=5;j++)
+			printf("\t%.2f",a[i][j]);
+	}
+}
