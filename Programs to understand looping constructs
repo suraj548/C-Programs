@@ -153,3 +153,34 @@ main()
 		printf("\nThe amount in account after %d year : %f",i,t);
 	}
 }
+
+
+
+
+
+write a program that accepts n mobile numbers iteratively.on accepting one mobile number it must check weather it ends with the even or
+odd digit.If even then the belongs to the batch A else he belongs to the batch B.The program must output number of students in batch A 
+batch B after all the numbers are been read.
+#include<stdio.h>
+main()
+{
+	int d=0,c=0,n;
+	long int a[100],i;
+	printf("Enter the number of students: ");
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		printf("Enter the mobile number of %ld student: ",i+1);
+		scanf("%ld",&a[i]);
+		if(a[i]%2==0)
+		{
+			c=c+1;
+		}
+		if(a[i]%2!=0)
+		{
+			d=d+1;
+		}
+	}
+	printf("\nThe number of students in batch A:%d",c);
+	printf("\nThe number of students in batch B:%d",d);
+}
