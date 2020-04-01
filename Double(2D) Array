@@ -93,6 +93,7 @@ for(k=1; k<m; k=k+2) {
 }
 
 
+-----------------------------------------------------------------------------------------------------------------------------------------
 
 write a c program to store details of the students in the form
 Roll No         sub1      sub2      sub3
