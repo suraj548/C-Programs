@@ -221,5 +221,88 @@ main()
 
 }
 
+-----------------------------------------------------------------------------------------------------------------------------------------
 
+Write a C program to get two one dimensional array A and B which are sorted in ascending order,and then merge them to a singally sorted
+array C.
 
+#include <stdio.h>
+
+void main()
+{
+    int arr1[100], arr2[100],arr3[100],m;
+    int i,j,temp,n,q,p=0;
+	
+	
+	   
+       printf("Input the number of elements to be stored in the array A:");
+       scanf("%d",&n);
+   
+       printf("Input %d elements in the array A:\n",n);
+       for(i=0;i<n;i++)
+        {
+	      printf("element - %d : ",i);
+	      scanf("%d",&arr1[i]);
+	    }
+    
+	/* Copy elements of first array into second array.*/ 
+    for(i=0;i<n-1;i++)
+	{
+		for(j=i+1;j<n;j++)
+		if(arr1[i]>arr1[j])
+		{
+			temp=arr1[i];
+			arr1[i]=arr1[j];
+			arr1[j]=temp;
+		}
+	}
+	printf("Input the number of elements to be stored in the array B:");
+       scanf("%d",&m);
+   
+       printf("Input %d elements in the array B:\n",n);
+       for(i=0;i<m;i++)
+        {
+	      printf("element - %d : ",i);
+	      scanf("%d",&arr2[i]);
+	    }
+     
+    for(i=0;i<m-1;i++)
+	{
+		for(j=i+1;j<m;j++)
+		if(arr2[i]>arr2[j])
+		{
+			temp=arr2[i];
+			arr2[i]=arr2[j];
+			arr2[j]=temp;
+		}
+	}
+	for(i=0; i<n; i++)
+    {
+        arr3[i] = arr1[i];
+    }
+    q=m+n;
+    for(i=n;i<q;i++)
+    {
+    	for(j=0;j<1;j++)
+    		arr3[i]=arr2[p];
+    		p++;
+	}
+
+	for(i=0;i<q-1;i++)
+	{
+		for(j=i+1;j<q;j++)
+		if(arr3[i]>arr3[j])
+		{
+			temp=arr3[i];
+			arr3[i]=arr3[j];
+			arr3[j]=temp;
+		}
+	}
+    /* Prints the elements copied into the second array. */
+    printf("\n\nThe merged and sorted C array is:\n");
+    for(i=0; i<q; i++)
+    {
+        printf("% 5d", arr3[i]);
+    }
+	       printf("\n\n");
+}
