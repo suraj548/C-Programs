@@ -1,0 +1,41 @@
+Write a C program to sort characters of a string in ascending order.The string must only contain small case letters and it must repeat
+for the number of time we want,like we wnat to do it for one string it must accept one string and do the operaation if we want two then 
+ it must accept two strings and do the operation for both the strings we want.
+input=suraj
+output=ajrsu
+#include<stdio.h>
+#include <string.h>
+
+int main (void) {
+   char string[10];
+   char temp;
+	int i, j,n,k,t;
+	printf("Enter number of strings of which you want to sort: ");
+	scanf("%d",&t);
+	while(k<t)
+{
+   printf("Enter the string: ");
+   scanf("%s",string);
+
+   n = strlen(string);
+
+   printf("String before sorting - %s \n", string);
+
+   for (i = 0; i < n-1; i++) {
+      for (j = i+1; j < n; j++) {
+         if (string[i] > string[j]) {
+            temp = string[i];
+            string[i] = string[j];
+            string[j] = temp;
+         }
+      }
+   }
+   
+   printf("String after sorting  - %s \n", string);
+   
+string[10]="";
+n=0;
+k++;
+}
+return 0;
+}
