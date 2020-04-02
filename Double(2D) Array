@@ -173,3 +173,53 @@ main()
 			printf("\t%.2f \t%.2f",a[i][0],a[i][4]);
 	}
 }
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Write C progran to store product code and price in 2D array,calculate the total price for multiple product codes entered from array along
+with the product code.
+
+#include<stdio.h>
+#include<string.h>
+main()
+{
+	int i,j,a[10][10],r,k,t,p=0,n,x[10],g,o;
+	printf("Enter the number of products to be inserted: ");
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		printf("Enter Product code and then Price");
+		for(j=0;j<2;j++)
+		{
+			scanf("%d",&a[i][j]);
+		}
+	}
+	for(i=0;i<n;i++)
+	{
+		for(o=0;o<1;o++)
+		{
+			if(a[i][0]!=x[o])
+			{
+				k=1;
+				for(j=i+1;j<n;j++)
+				{
+					if(a[i][0]==a[j][0])
+					{
+					
+						k++;
+						x[o]=a[i][0];
+					}	
+				}
+	t=k*a[i][1];
+	printf("\nThe quantity of %d product code is %d and total amount is %d",a[i][0],k,t);				
+	t=0;
+	}
+	}
+			
+}
+	printf("\n%d",p);
+
+}
+
+
+
