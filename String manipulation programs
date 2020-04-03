@@ -39,3 +39,59 @@ k++;
 }
 return 0;
 }
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+write a program to find occurences of a word in a string.
+
+
+#include <string.h>
+#include<stdio.h>
+int main()
+{
+    char s[1000],w[1000];  
+    int n,a[1000],i,h,j,k=0,l,found=0,t=0;
+ 
+    printf("Enter  the string : ");  //propmts us to enter a sentence
+    gets(s);
+    printf("Enter word to be searched: ");//prompts us to enter a word
+    gets(w);
+    for(i=0;i<s[i];i++) //this for loop helps us to find the total number of whitespaces in the string
+    {
+    	if(s[i]==' ')
+    	{
+    		a[k++]=i;
+    		//printf("\n%d",i);//a[] is the array which stores the indices of the string array where whitespaces are present
+    		//printf("%d",k);
+		}
+	}
+	a[k++]=i;
+	//printf("%d",a[0]);
+	j=0;
+	h=strlen(w)
+	for(i=0;i<k;i++)//this loop repeats for number of times the whitespaces are present in the sentence which we had given as input
+	{
+		n=a[i]-j;//n calculates the length of the word which is present before the whitespace in the sentence.
+		if(n==strlen(w))//this checks weather the length of the word before the whitespace is equal to the length of the word of wh
+		{               //which we must count the occurence if it is equal than it will enter the loop or else directly that word wi
+				//will be skipped.
+			t=0;
+			for(l=0;l<h;l++) //this loop will repeat for number of characters present in the word which we need to count.
+			{
+				if(s[l+j]==w[l])
+				{
+					t++;        //t will increment if the word from sentence matches with the word we need to count
+				}
+			}
+			if(t==strlen(w))
+		    {
+				found++; //finally if the lengths are equal then we can increment the found variable 
+				 
+		    }
+		}
+	
+		j=a[i]+1;//j will will be incremented to next word in sentence present after white space.
+	}
+	 
+	 printf("word '%s' is occurred count=%d ",w,found);
+}
