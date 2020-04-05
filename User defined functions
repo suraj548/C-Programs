@@ -1,3 +1,4 @@
+Write a c program to demonstrate the use of calculator using the user defined functions.
 
 #include<stdio.h>
 float add(float,float);
@@ -65,3 +66,28 @@ float div(float a,float b)
 		return r;
 	}
 }
+
+
+
+
+
+write a function unit(int n)that returns the unit of the digit of a number represented in argument n.
+
+
+#include<stdio.h>
+int unit(int);
+main()
+{
+	int a,e;
+	printf("Enter a number: ");
+	scanf("\n%d",&a);
+	e=unit(a);
+	printf("\n%d is the unit place of the number %d",e,a);
+}
+int unit(int a)
+{
+	int d;
+	d=a%10;
+	return d;
+}
+
