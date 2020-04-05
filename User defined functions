@@ -1,0 +1,67 @@
+
+#include<stdio.h>
+float add(float,float);
+float sub(float,float);
+float mul(float,float);
+float div(float,float);
+main()
+{
+	int c;
+	float sp,a,b,s;
+	printf("\nEnetr two number: ");
+	scanf("%f %f",&a,&b);
+	printf("\nEnter Option: ");
+	printf("\n1.ADD \n2.Subtract \n3.Multiply \4.Divide")
+	scanf("%d",&c);
+	if(c==1)
+	{
+		s=add(a,b);
+		printf("\n%.2f",s);
+	}
+	if(c==2)
+	{
+		s=sub(a,b);
+		printf("\n%.2f",s);
+	}
+	if(c==3)
+	{
+		s=mul(a,b);
+		printf("\n%.2f",s);
+	}
+	if(c==4)
+	{
+		s=div(a,b);
+		printf("\n%.2f",s);
+	}
+}
+float add(float a,float b)
+{
+	float r=a+b;
+	return r;
+}
+float sub(float a,float b)
+{
+	float r=a-b;
+	return r;
+}
+
+float mul(float a,float b)
+{
+	float r=a*b;
+	return r;
+}
+
+float div(float a,float b)
+{
+	float r;
+	if(b==0)
+	{
+		printf("Infinity");
+		exit(0);
+	}
+	else
+	{
+		r=a/b;
+		return r;
+	}
+}
