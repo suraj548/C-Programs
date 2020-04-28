@@ -123,3 +123,33 @@ int main()
 printf("\n%d",count);
 return 0;
 }
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Write a C program to read student name,branch,Usn,address and display them using the string manipulation functions.
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	char n[10],u[10],a[10],b[10];
+	int i,count=0;
+	printf("Enter name: ");
+	gets(n);
+	printf("Enter USN: ");
+	gets(u);
+	printf("Enter Address: ");
+	gets(a);
+	printf("Enter Branch: ");
+	gets(b);
+	printf("The student details are: \n");
+	puts(n);
+	puts(u);
+	puts(a);
+	puts(b);
+return 0;
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
