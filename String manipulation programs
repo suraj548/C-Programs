@@ -95,3 +95,31 @@ int main()
 	 
 	 printf("word '%s' is occurred count=%d ",w,found);
 }
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
+C program to calcuate the frequency of a character in a string.
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	char s[10],k;
+	int i,count=0;
+	printf("Enter a strring: ");
+	gets(s);
+    	printf("Enter a strring to search: ");
+	scanf("%c",&k);
+	for(i=0;i<strlen(s);i++)
+	{
+		if(k==s[i])
+			count++;		
+	}
+printf("\n%d",count);
+return 0;
+}
