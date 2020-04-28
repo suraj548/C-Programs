@@ -1,0 +1,23 @@
+Write a c program to print the first n natural numbers using recurssion.
+
+#include<stdio.h>
+int add(int);
+main()
+{
+	int n,s;
+	printf("Enter n: ");
+	scanf("%d",&n);
+	s=add(n);
+	printf("%d",s);
+}
+int add(n)
+{
+	if(n==0)
+		return n;
+	while(n>=1)
+	{
+		return n+add(n-1);
+	}
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------
