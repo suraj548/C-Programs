@@ -13,11 +13,98 @@ main()
 int add(n)
 {
 	if(n==0)
-		return n;
+		return 0;
 	while(n>=1)
 	{
 		return n+add(n-1);
 	}
 }
-
 ------------------------------------------------------------------------------------------------------------------------------------------
+Write a c program to find sum of elements of an array with n elements using recursion.
+
+#include <stdio.h>
+#define MAX_SIZE 100
+
+int sum(int arr[], int start, int len);
+
+
+int main()
+{
+    int arr[MAX_SIZE];
+    int N, i, sumofarray;
+    
+    
+    /* Input size and elements in array  */
+    printf("Enter size of the array: ");
+    scanf("%d", &N);
+    printf("Enter elements in the array: ");
+    for(i=0; i<N; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+    
+    
+    sumofarray = sum(arr, 0, N);
+    printf("Sum of array elements: %d", sumofarray);
+    
+    return 0;
+}
+int sum(int arr[], int start, int len) 
+{
+    /* Recursion base condition */
+    if(start >= len)
+        return 0;
+        
+    return (arr[start] + sum(arr, start + 1, len));
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+Write a C program to generate and print first 10 natural numbers algong with its sum using recurrsion
+#include<stdio.h>
+int add(int);
+main()
+{
+	int n,s;
+	printf("Enter n: ");
+	scanf("%d",&n);
+	s=add(n);
+	printf("\nThe sum is:%d",s);
+}
+int add(n)
+{
+	if(n==0)
+		return 0;
+	while(n>=1)
+	{
+		printf("\n%d",n);
+		return n+add(n-1);
+	}
+}
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Write a C program to print the sum of first n odd numbers using recurssion.
+
+#include <stdio.h>
+#include <stdlib.h>
+int totalOdd(int,int);
+
+int main(){
+	int k;
+	   printf("Enter n: ");
+   scanf("%d",&k);
+    printf("%d\n",totalOdd(1,k));
+  }
+
+int totalOdd(int n,int k)
+{
+   int odd = n;
+      if(odd > k){
+          return 0;
+         }
+       else{
+          return (n+totalOdd(odd+2,k));
+         }
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
