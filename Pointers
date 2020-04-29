@@ -1,0 +1,30 @@
+Write a Program to read 10 numbers using pointers.Accept a number a search weather that number is present in the list.Use pointer concept
+while searching.
+
+#include <stdio.h>
+int main() {
+  int x[5] = {},i,c,flag=0;
+  int* ptr,*p;
+  ptr = &x[0]; 
+  p=&c;
+  printf("Enter the array elements: ");
+  for(i=0;i<5;i++)
+  	scanf("%d",(ptr+i));
+  printf("Enter key: ");
+  scanf("%d",&c);
+  
+  for(i=0;i<5;i++)
+  {
+  	if(*p==*(x+i))
+  		flag=1;
+  }
+	if(flag==1)
+		printf("%d is present at %d",*(x+i),i+1);
+	else
+		printf("Number is not present");
+return 0;
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+
