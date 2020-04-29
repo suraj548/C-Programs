@@ -208,3 +208,22 @@ int main()
 		i++;
 	}
 }
+
+
+C Program to print fibonacci numbers.
+
+#include<stdio.h>
+main()
+{
+	int i,s1=0,s2=1,next,n;
+	printf("Enter n: ");
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		printf("\n%d",s1);
+		next=s1+s2;
+		s1=s2;
+		s2=next;
+		
+	}
+}
