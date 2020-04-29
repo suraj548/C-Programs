@@ -107,4 +107,46 @@ int totalOdd(int n,int k)
 }
 
 ----------------------------------------------------------------------------------------------------------------------------------------
+Write a recursive function in C to impement binary search
+
+#include <stdio.h>
+
+int binarysearch(int a[], int low, int high, int x) {
+   int mid = (low + high) / 2;
+   if (low > high)
+   	 	return -1;
+   if (a[mid] == x) 
+   		return mid;
+   if (a[mid] < x) 
+     return binarysearch(a, mid + 1, high, x);
+   else 
+     return binarysearch(a, low, mid-1, x);
+}
+
+int main(void) {
+  int a[100],i;
+  int n, pos, s;
+ 
+  printf("Enter the length of the array\n");
+  scanf("%d", &n);
+  
+  printf("Enter the array elements\n");
+  for(i=0; i<n; i++)
+    scanf("%d", &a[i]);
+ 
+  printf("Enter the element to search\n");
+  scanf("%d", &s);
+  
+  pos = binarysearch(a,0,n-1,s);
+ 
+  if (pos < 0 )
+    printf("Cannot find the element %d in the array.\n",s);
+ 
+  else
+    printf("The position of %d in the array is %d.\n", s, pos+1); 
+    
+  return 0;
+}    
+
+-----------------------------------------------------------------------------------------------------------------------------------------
 
