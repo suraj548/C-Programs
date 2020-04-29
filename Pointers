@@ -3,7 +3,7 @@ while searching.
 
 #include <stdio.h>
 int main() {
-  int x[5] = {},i,c,flag=0;
+  int x[5] = {},i,c,flag=0,j;
   int* ptr,*p;
   ptr = &x[0]; 
   p=&c;
@@ -16,12 +16,15 @@ int main() {
   for(i=0;i<5;i++)
   {
   	if(*p==*(x+i))
+  	{
   		flag=1;
+  		j=i;
+  	}
   }
-	if(flag==1)
-		printf("%d is present at %d",*(x+i),i+1);
-	else
-		printf("Number is not present");
+  if(flag==1)
+    printf("%d is present at %d",*(x+j),j+1);
+  else
+    printf("element Not Present");
 return 0;
 }
 
