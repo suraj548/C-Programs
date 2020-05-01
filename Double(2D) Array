@@ -216,10 +216,8 @@ main()
 	}
 			
 }
-	printf("\n%d",p);
 
 }
-
 -----------------------------------------------------------------------------------------------------------------------------------------
 
 Write a C program to get two one dimensional array A and B which are sorted in ascending order,and then merge them to a singally sorted
