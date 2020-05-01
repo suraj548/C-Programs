@@ -306,3 +306,27 @@ void main()
     }
 	       printf("\n\n");
 }
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
+Write a C program to store students name and USN in a 2D array display the list
+
+#include<stdio.h>
+main()
+{
+	char s[2][100];
+	int i;
+
+	printf("\nEnter name a Usn Of Student: ");
+	for(i=0;i<2;i++)
+	{
+		scanf("%s",s[i]);
+	}
+	printf("The details of students are: ");
+	for(i=0;i<2;i++)
+		printf("\n%s",s[i]);
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
