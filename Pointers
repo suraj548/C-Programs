@@ -30,4 +30,96 @@ return 0;
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 
+Write a program that dynamically allocates memory for an array of size n,reads elements of array and sorts them in ascending order.
+
+
+#include<stdio.h>
+#include<stdlib.h>
+void asc(int *,int n);
+void swap(int *,int *);
+main()
+{
+	int i,n,a[100];
+	int *ptr;
+	printf("Enter number of elements: ");
+	scanf("%d",&n);
+	ptr=(int *)malloc(sizeof(int));
+	ptr=&a[0];
+	for(i=0;i<n;i++)
+		scanf("%d",(ptr+i));
+	printf("Before");
+	for(i=0;i<n;i++)
+		printf("\n%d",a[i]);
+	printf("After");
+	asc(ptr,n);
+}
+void asc(int *ptr,int n)
+{
+	int i,j,*n1,*n2;
+	for(i=0;i<n-1;i++)
+	{
+		for(j=0;j<n-i-1;j++)
+		{
+			if(*(ptr+j)>*(ptr+j+1))
+			{
+				n1=(ptr+j);
+				n2=(ptr+j+1);
+				swap(n1,n2);
+			}
+		}
+		n1=0;
+		n2=0;
+	}
+	for(i=0;i<n;i++)
+		printf("\n%d",*(ptr+i));
+}
+void swap(int *n1,int *n2)
+{
+	int temp;
+    temp = *n1;
+    *n1 = *n2;
+    *n2 = temp;
+}
+
+                                                              OR
+                                                              
+#include<stdio.h>
+#include<stdlib.h>
+void swap(int *,int *);
+main()
+{
+	int i,n,arr[100],j;
+	int *ptr;
+	printf("Enter number of elements: ");
+	scanf("%d",&n);
+	ptr=(int *)malloc(sizeof(int));
+	ptr=&arr[0];
+	for(i=0;i<n;i++)
+		scanf("%d",(ptr+i));
+	printf("Before");
+	for(i=0;i<n;i++)
+		printf("\n%d",arr[i]);
+	printf("After");
+	for(i=0;i<n-1;i++)
+	{
+		for(j=0;j<n-i-1;j++)
+		{
+			if(arr[j]>arr[j+1])
+			{
+				swap(&arr[j],&arr[j+1]);
+			}
+		}
+	}
+	for(i=0;i<n;i++)
+		printf("\n%d",arr[i]);
+	
+}
+
+void swap(int *n1,int *n2)
+{
+	int temp;
+    temp = *n1;
+    *n1 = *n2;
+    *n2 = temp;
+}
 
