@@ -122,4 +122,48 @@ void swap(int *n1,int *n2)
     *n1 = *n2;
     *n2 = temp;
 }
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Write a C program to swap numbers using pointers
+
+#include<stdio.h>
+void swap(int *,int *);
+main()
+{
+	int n1,n2;
+	int *a,*b;
+	a=&n1;
+	b=&n2;
+	printf("Enter n1 and n2");
+	scanf("%d %d",&n1,&n2);
+	printf("Before Swap");
+	printf("\n%d %d",n1,n2);
+	swap(a,b);
+	printf("\nAfter Swap");
+	printf("\n%d %d",n1,n2);
+}
+void swap(int *a,int *b)
+{
+	int temp;
+	temp = *a;
+        *a = *b;
+        *b = temp;
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Write a C program to change the value of integer constant using pointer.
+
+#include<stdio.h>
+main()
+{
+	const int a=5;
+	int *b;
+	b=&a;
+	printf("%d",a);
+	*b=8;
+	printf("\n%d",a);	
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------
 
