@@ -1,0 +1,61 @@
+Write a C program to store 10 student records (Name,USN,MobileNumber,Address)and sort them by name in ascending order.Output the sorted 
+records.
+
+#include<stdio.h>
+#include<string.h>
+struct student
+{
+	char name[20];
+	char usn[10];
+	char add[30];
+	char m[10];
+};
+main()
+{
+	int i,n,j;
+	char c[10][10];
+	struct student s[10],temp;
+	printf("Enter the number of students whose records must be stored: ");
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		printf("\nEnter the student %d name: ",i+1);
+		scanf("%s",&s[i].name);
+		printf("Enter the student %d USN: ",i+1);
+		scanf("%s",s[i].usn);
+		printf("Enter the student %d mobile number: ",i+1);
+		scanf("%s",s[i].m);
+		printf("Enter the student %d address: ",i+1);
+		scanf("%s",&s[i].add);
+		printf("\n\n");
+	}
+	printf("List of students before sort: \n");
+	for(i=0;i<n;i++)
+	{
+		printf("Name: %s",s[i].name);
+		printf("\tUSN: %s",s[i].usn);
+		printf("\tMobile number: %s",s[i].m);
+		printf("\tAddress: %s",s[i].add);
+		printf("\n\n");
+	}
+	
+	for (i=0; i < n ; i++) {
+		for (j=i+1; j< n; j++) {
+			if(strcmpi(s[i].name,s[j].name) > 0) {
+				temp=s[i];
+				s[i]=s[j];
+				s[j]=temp;
+			}
+		}
+	}
+	printf("List of students sorted according to their names\n");
+	for(i=0;i<n;i++)
+	{
+		printf("Name: %s",s[i].name);
+		printf("\tUSN: %s",s[i].usn);
+		printf("\tMobile number: %s",s[i].m);
+		printf("\tAddress: %s",s[i].add);
+		printf("\n\n");
+	}
+}
+
