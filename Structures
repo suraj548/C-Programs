@@ -59,3 +59,96 @@ main()
 	}
 }
 
+----------------------------------------------------------------------------------------------------------------------------------------
+Read information(name,marks,roll number)of n students using structure and write a C program to sort them using roll no in ascending 
+order.
+
+#include<stdio.h>
+#include<string.h>
+struct student
+{
+	char name[20];
+	int r;
+	int m;
+};
+main()
+{
+	int i,n,j;
+	char c[10][10];
+	struct student s[10],temp;
+	printf("Enter the number of students whose records must be stored: ");
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		printf("\nEnter the student %d name: ",i+1);
+		scanf("%s",s[i].name);
+		printf("Enter the student %d roll: ",i+1);
+		scanf("%d",&s[i].r);
+		printf("Enter the student %d marks: ",i+1);
+		scanf("%d",&s[i].m);
+		printf("\n\n");
+	}
+	printf("List of students before sort: \n");
+	for(i=0;i<n;i++)
+	{
+		printf("Name: %s",s[i].name);
+		printf("\tRoll no: %d",s[i].r);
+		printf("\tMarks: %d",s[i].m);
+		printf("\n\n");
+	}
+	
+	for (i=0; i < n ; i++) {
+		for (j=i+1; j< n; j++) {
+			if(s[i].r>s[j].r) {
+				temp=s[i];
+				s[i]=s[j];
+				s[j]=temp;
+			}
+		}
+	}
+	printf("List of students sorted according to their names\n");
+	for(i=0;i<n;i++)
+	{
+		printf("Name: %s",s[i].name);
+		printf("\tRoll no: %d",s[i].r);
+		printf("\tMarks: %d",s[i].m);
+		printf("\n\n");
+	}
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Write a C Program to demonstrate use of structure ,to read the bank details of customer.The details are 1)Cust_ID 2)Name 3)Age 4)Address
+5)Type of account.
+
+#include<stdio.h>
+#include<string.h>
+struct bank
+{
+	int cu;
+	char name[20];
+	int a;
+	char add[100];
+	char type[10];
+};
+main()
+{
+	int i,n;
+	struct bank b[10];
+	printf("Enter the number of customers whose records must be stored: ");
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		printf("\nEnter the customer %d Cust_ID: ",i+1);
+		scanf("%d",&b[i].cu);
+		printf("\nEnter the customer %d name: ",i+1);
+		scanf("%s",b[i].name);
+		printf("\nEnter the customer %d age: ",i+1);
+		scanf("%d",&b[i].a);
+		printf("\nEnter the customer %d address: ",i+1);
+		scanf("%s",b[i].add);
+		printf("\nEnter the customer %d type: ",i+1);
+		scanf("%s",b[i].type);
+		printf("\n\n");
+	}
+}
