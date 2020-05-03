@@ -234,3 +234,69 @@ main()
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 
+consider following declaration
+struct emp{
+		int code;
+		char name[10];
+		float salary;
+	};
+Given that there are n employees write a program using pointer to acess the data of an employee with the highest salaray.
+
+
+#include<stdio.h>
+struct emp{
+	int code;
+	char name[20];
+	float salary;
+};
+main()
+{
+	struct emp e[100],*ptr;
+	ptr=&e[0];
+	int n,i,a[10];
+	float l;
+	printf("Enter number of employees whose details must be entered: ");
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		printf("Enter name: ");
+		scanf("%s",(ptr+i)->name);
+		printf("Enter code: ");
+		scanf("%d",&(ptr+i)->code);
+		printf("Enter salary: ");
+		scanf("%f",&(ptr+i)->salary);
+		printf("\n\n");
+	}
+	for(i=0;i<n;i++)
+	{
+		printf("Name:%s",(ptr+i)->name);
+		printf("\tCode:%d",(ptr+i)->code);
+		printf("\tSalary:%.2f",(ptr+i)->salary);
+		printf("\n\n");
+	}
+	l=e[0].salary;
+	for(i=0;i<n;i++)
+		a[i]=(ptr+i)->salary;
+	for(i=0;i<n;i++)
+	{
+		if(a[0]<a[i])
+		{	
+			//j=(ptr+i+1)->name;
+			//k=(ptr+i+1)->code;
+			a[0]=a[i];
+		}
+	}
+	l=a[0];
+	printf("\nmax=%f",l);
+	printf("\nThe details of employee with highest salary:\n");
+	for(i=0;i<n;i++)
+	{
+		if(l==(ptr+i)->salary)
+		{
+			printf("Name:%s",(ptr+i)->name);
+			printf("\tCode:%d",(ptr+i)->code);
+			printf("\tSalary:%.2f",(ptr+i)->salary);
+		}
+		
+	}
+}
