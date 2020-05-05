@@ -295,4 +295,59 @@ main()
 	}
 }
 
+Suppose the postal rates for mailing letter are as follows
+Rs 0.5 per 10 grams for first 50 grams
+Rs 0.4 per 10 grams for next 100 grams 
+Rs 0.25 per 10 grams for next 250 grams
+Rs 0.25 per kilogram for the letters weighing more than 400 grams
+Write a C program that prompts for weight of a letter and prints the postage to be paid.
 
+#include<stdio.h>
+main()
+{
+	float a=0,x,w;
+	printf("Enter the weight: ");
+	scanf("%f",&w);
+	x=w;
+	if(w>=400)
+	{
+		a=(w*0.25)/1000;
+	}
+	else
+	{
+			if(w<=50)
+			{
+				a=0.5*(w/10);
+				x=0;
+			}
+			else
+			{
+				x=x-50;
+				a=0.5*(50/10);
+			}
+			if(x<=100)
+			{
+				a=a+(0.4*(x/10));
+				x=0;
+			}
+			else
+			{
+				x=x-100;
+				a=a+(0.4*(100/10));
+				
+			}
+			if(x<=250)
+			{
+				a=a+(0.25*(x/10));
+				x=0;
+			}
+			else
+			{
+				x=w-250;
+				a=a+(0.25*(x/10));
+			}
+	}
+	printf("\nPostage to be paid %.2f Rupees",a);
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------
